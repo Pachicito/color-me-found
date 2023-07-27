@@ -9,11 +9,15 @@ var globalValue = 50;
 window.onload = function() {
   //const queryString = window.location.search;
   const urlParams = new URLSearchParams(location.search);
-  let params = new URL(document.location).searchParams;
-  console.log(params);
-  if(urlParams.size > 0) {
-    globalValue = urlParams.get('h');
-    console.log(globalValue);
+  if(urlParams) {
+    if(navigator.userAgentData.mobile) {
+      const h = urlParams.split('=');
+      globalValue = h[1];
+      console.log('mobile='+globalValue);
+    } else {
+      console.log('desktop='+globalValue);
+      globalValue = urlParams.get('h');
+    }
   } else {
     globalValue = randomRange;
     console.log('no Params');
