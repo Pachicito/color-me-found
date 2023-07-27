@@ -11,6 +11,9 @@ window.onload = function() {
   const urlParams = new URLSearchParams(location.search);
   console.log('params:'+urlParams);
   if(urlParams) {
+    globalValue = urlParams.get('h');
+    console.log('value='+globalValue);
+    /*
     if(navigator.userAgentData.mobile) {
       const h = urlParams.split('=');
       globalValue = h[1];
@@ -18,7 +21,7 @@ window.onload = function() {
     } else {
       globalValue = urlParams.get('h');
       console.log('desktop='+globalValue);
-    }
+    }*/
   } else {
     globalValue = randomRange;
     console.log('no Params');
