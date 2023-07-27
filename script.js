@@ -10,7 +10,7 @@ window.onload = function() {
   //const queryString = window.location.search;
   const urlParams = new URLSearchParams(location.search);
   console.log('params:'+urlParams);
-  if(urlParams) {
+  if(urlParams != '') {
     globalValue = urlParams.get('h');
     console.log('value='+globalValue);
     /*
