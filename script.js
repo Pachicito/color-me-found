@@ -7,8 +7,8 @@ var colorChoice = document.getElementById("color-choice");
 var globalValue = 50;
 
 window.onload = function() {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
+  //const queryString = window.location.search;
+  const urlParams = new URLSearchParams(window.location.search);
 
   if(urlParams.size > 0) {
     globalValue = urlParams.get('h');
