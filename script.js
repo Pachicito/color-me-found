@@ -12,6 +12,7 @@ window.onload = function() {
 
   if(urlParams.size > 0) {
     globalValue = urlParams.get('h');
+    console.log(globalValue);
   } else {
     globalValue = randomRange;
   }
@@ -47,7 +48,7 @@ function shareLink() {
     navigator.share({
       title: 'Color Me Found',
       text: 'Look for this color in the crowd',
-      url: 'https://colormefound.com',
+      url: 'https://colormefound.com?h='+globalValue,
     })
       .then(() => console.log('Successful share'))
       .catch((error) => console.log('Error sharing', error));
