@@ -9,14 +9,15 @@ var globalValue = 50;
 window.onload = function() {
   //const queryString = window.location.search;
   const urlParams = new URLSearchParams(location.search);
+  console.log('params:'+urlParams);
   if(urlParams) {
     if(navigator.userAgentData.mobile) {
       const h = urlParams.split('=');
       globalValue = h[1];
       console.log('mobile='+globalValue);
     } else {
-      console.log('desktop='+globalValue);
       globalValue = urlParams.get('h');
+      console.log('desktop='+globalValue);
     }
   } else {
     globalValue = randomRange;
@@ -62,8 +63,8 @@ function shareLink() {
 }
 
 colorRange.addEventListener('input', function(e) {
-  var hue = ((this.value/100)*360).toFixed(0)
-  globalHue = hue;
+  globalValue = this.value;
+  var hue = ((globalValue/100)*360).toFixed(0)
   var hsl = "hsl("+ hue + ", 100%, 50%)"
   var bgHsl = "hsl("+ hue + ", 100%, 50%)"
   colorRange.style.color = hsl
