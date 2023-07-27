@@ -9,22 +9,10 @@ var globalValue = 50;
 window.onload = function() {
   //const queryString = window.location.search;
   const urlParams = new URLSearchParams(location.search);
-  console.log('params:'+urlParams);
   if(urlParams != '') {
     globalValue = urlParams.get('h');
-    console.log('value='+globalValue);
-    /*
-    if(navigator.userAgentData.mobile) {
-      const h = urlParams.split('=');
-      globalValue = h[1];
-      console.log('mobile='+globalValue);
-    } else {
-      globalValue = urlParams.get('h');
-      console.log('desktop='+globalValue);
-    }*/
   } else {
     globalValue = randomRange;
-    console.log('no Params');
   }
     colorRange.value = globalValue;
     var hue = ((globalValue/100)*360).toFixed(0)
