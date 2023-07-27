@@ -9,7 +9,8 @@ var globalValue = 50;
 window.onload = function() {
   //const queryString = window.location.search;
   const urlParams = new URLSearchParams(location.search);
-  console.log(urlParams);
+  let params = new URL(document.location).searchParams;
+  console.log(params);
   if(urlParams.size > 0) {
     globalValue = urlParams.get('h');
     console.log(globalValue);
