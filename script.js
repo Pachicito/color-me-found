@@ -15,6 +15,7 @@ window.onload = function() {
     console.log(globalValue);
   } else {
     globalValue = randomRange;
+    console.log('no Params');
   }
     colorRange.value = globalValue;
     var hue = ((globalValue/100)*360).toFixed(0)
